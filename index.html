@@ -1,163 +1,219 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Achadinhos Home Brasil</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #F4EFE8;
-    color: #5E4632;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+body{
+    font-family:'Poppins', sans-serif;
+    background:#F9F7F3;
+    color:#2F2F2F;
+    line-height:1.6;
 }
 
-.hero {
-    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
-    background-size: cover;
-    background-position: center;
-    padding: 120px 20px;
-    text-align: center;
-    position: relative;
-    color: white;
+/* ---------------- HERO ---------------- */
+
+.hero{
+    background:#FFFFFF;
+    padding:100px 20px 120px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(94,70,50,0.55);
+/* Ramos decorativos */
+.hero::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:radial-gradient(circle at center, rgba(155,174,138,0.15), transparent 70%);
+    top:-100px;
+    left:-100px;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
+.hero::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:radial-gradient(circle at center, rgba(155,174,138,0.15), transparent 70%);
+    bottom:-100px;
+    right:-100px;
 }
 
-.logo {
-    width: 160px;
-    margin-bottom: 20px;
+.logo{
+    width:150px;
+    margin-bottom:40px;
 }
 
-.hero h1 {
-    font-family: 'Lora', serif;
-    font-size: 42px;
-    margin-bottom: 15px;
+.hero h1{
+    font-family:'Playfair Display', serif;
+    font-size:48px;
+    margin-bottom:20px;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
+.hero p{
+    font-size:18px;
+    max-width:600px;
+    margin:0 auto 35px;
+    color:#555;
 }
 
-.btn {
-    background-color: #6F8F6B;
-    color: white;
-    padding: 15px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-    display: inline-block;
+.btn{
+    background:#6E8B6B;
+    color:#fff;
+    padding:14px 32px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
 }
 
-.btn:hover {
-    background-color: #5c7758;
+.btn:hover{
+    background:#5f7a5c;
 }
 
-.section {
-    padding: 80px 0;
+/* ---------------- IMAGEM IMPACTO ---------------- */
+
+.inspiration{
+    background-image:url('SUA-IMAGEM-AQUI.jpg');
+    background-size:cover;
+    background-position:center;
+    height:450px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
 }
 
-.section h2 {
-    text-align: center;
-    font-family: 'Lora', serif;
-    font-size: 32px;
-    margin-bottom: 50px;
+.inspiration::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+.inspiration h2{
+    position:relative;
+    font-family:'Playfair Display', serif;
+    font-size:36px;
+    text-align:center;
 }
 
-.card {
-    background: white;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: 0.3s;
+/* ---------------- PRODUTOS ---------------- */
+
+.products{
+    padding:80px 20px;
+    text-align:center;
 }
 
-.card:hover {
-    transform: translateY(-8px);
+.products h2{
+    font-family:'Playfair Display', serif;
+    font-size:32px;
+    margin-bottom:60px;
 }
 
-.card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
 }
 
-.card-content {
-    padding: 25px;
+.card{
+    background:#fff;
+    width:300px;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    text-align:left;
+    transition:0.3s;
 }
 
-.badge {
-    font-size: 12px;
-    color: #6F8F6B;
-    font-weight: 600;
-    margin-bottom: 10px;
+.card:hover{
+    transform:translateY(-5px);
 }
 
-.card-content h3 {
-    margin: 5px 0 15px;
-    font-weight: 500;
+.card img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
 }
 
-.old-price {
-    text-decoration: line-through;
-    color: #aaa;
-    font-size: 14px;
+.card small{
+    color:#6E8B6B;
+    font-weight:500;
 }
 
-.price {
-    font-size: 22px;
-    color: #6F8F6B;
-    font-weight: 600;
+.card h3{
+    font-size:18px;
+    margin:10px 0;
 }
 
-.features {
-    text-align: center;
-    font-size: 16px;
-    line-height: 2;
+.old-price{
+    text-decoration:line-through;
+    color:#999;
+    font-size:14px;
 }
 
-.cta-final {
-    text-align: center;
+.price{
+    color:#6E8B6B;
+    font-weight:600;
+    font-size:18px;
 }
 
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 14px;
+/* ---------------- BENEFÍCIOS ---------------- */
+
+.benefits{
+    padding:60px 20px;
+    text-align:center;
+    background:#FFFFFF;
 }
+
+.benefits p{
+    margin:10px 0;
+    font-size:16px;
+}
+
+/* ---------------- CTA FINAL ---------------- */
+
+.final-cta{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.final-cta .btn{
+    font-size:18px;
+}
+
+/* ---------------- RESPONSIVO ---------------- */
 
 @media(max-width:768px){
-    .hero h1 {
-        font-size: 28px;
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .inspiration{
+        height:300px;
+    }
+
+    .cards{
+        flex-direction:column;
+        align-items:center;
     }
 }
 
@@ -166,70 +222,63 @@ footer {
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
-    <div class="hero-content container">
-        <img src="logo.png" class="logo">
-        <h1>Transforme sua casa sem pagar caro.</h1>
-        <p>Curadoria diária de utensílios, organização e decoração com preços que surpreendem.</p>
-        <a href="https://t.me/achadinhoshomebr" target="_blank" class="btn">
-            Entrar no grupo gratuito
-        </a>
-    </div>
+    <img src="SUA-LOGO-AQUI.png" alt="Logo" class="logo">
+    <h1>Transforme sua casa sem pagar caro.</h1>
+    <p>Curadoria diária de utensílios, organização e decoração com preços que surpreendem.</p>
+    <a href="#" class="btn">Entrar no grupo gratuito</a>
 </section>
 
-<section class="section container">
+<!-- IMAGEM INSPIRAÇÃO -->
+<section class="inspiration">
+    <h2>Inspire-se todos os dias com achadinhos incríveis</h2>
+</section>
+
+<!-- PRODUTOS -->
+<section class="products">
     <h2>Alguns achadinhos recentes</h2>
 
-    <div class="grid">
+    <div class="cards">
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf">
-            <div class="card-content">
-                <div class="badge">Achadinho do dia</div>
-                <h3>Organizadores de Cozinha Premium</h3>
-                <div class="old-price">De R$ 89,90</div>
-                <div class="price">Por R$ 39,90</div>
-            </div>
+            <img src="imagem1.jpg" alt="">
+            <small>Achadinho do dia</small>
+            <h3>Organizadores de Cozinha Premium</h3>
+            <div class="old-price">De R$ 89,90</div>
+            <div class="price">Por R$ 39,90</div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1582582494700-8b9e1b2f6f8e">
-            <div class="card-content">
-                <div class="badge">Oferta limitada</div>
-                <h3>Luminária Aconchegante Minimalista</h3>
-                <div class="old-price">De R$ 149,90</div>
-                <div class="price">Por R$ 59,90</div>
-            </div>
+            <img src="imagem2.jpg" alt="">
+            <small>Oferta limitada</small>
+            <h3>Luminária Aconchegante Minimalista</h3>
+            <div class="old-price">De R$ 149,90</div>
+            <div class="price">Por R$ 59,90</div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1600607687644-c7f34b5063c0">
-            <div class="card-content">
-                <div class="badge">Mais procurado</div>
-                <h3>Kit Potes Herméticos Elegantes</h3>
-                <div class="old-price">De R$ 119,90</div>
-                <div class="price">Por R$ 49,90</div>
-            </div>
+            <img src="imagem3.jpg" alt="">
+            <small>Mais procurado</small>
+            <h3>Kit Potes Herméticos Elegantes</h3>
+            <div class="old-price">De R$ 119,90</div>
+            <div class="price">Por R$ 49,90</div>
         </div>
 
     </div>
 </section>
 
-<section class="section container features">
-    ✔ Curadoria diária<br>
-    ✔ Ofertas reais<br>
-    ✔ Comunidade crescendo todos os dias
+<!-- BENEFÍCIOS -->
+<section class="benefits">
+    <p>✓ Curadoria diária</p>
+    <p>✓ Ofertas reais</p>
+    <p>✓ Comunidade crescendo todos os dias</p>
 </section>
 
-<section class="section cta-final">
-    <a href="https://t.me/achadinhoshomebr" target="_blank" class="btn">
-        Quero fazer parte agora
-    </a>
+<!-- CTA FINAL -->
+<section class="final-cta">
+    <a href="#" class="btn">Quero fazer parte agora</a>
 </section>
-
-<footer>
-    © 2026 Achadinhos Home Brasil
-</footer>
 
 </body>
 </html>
