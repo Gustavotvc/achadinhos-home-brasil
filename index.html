@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Achadinhos Home Brasil</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,31 +18,53 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
 }
 
-header {
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
     text-align: center;
-    padding: 60px 20px 40px;
+    position: relative;
+    color: white;
 }
 
-header h1 {
+.hero::after {
+    content: "";
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(94,70,50,0.55);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Lora', serif;
     font-size: 42px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-header p {
+.hero p {
     font-size: 18px;
-    color: #6F8F6B;
     margin-bottom: 30px;
 }
 
 .btn {
     background-color: #6F8F6B;
     color: white;
-    padding: 15px 35px;
+    padding: 15px 40px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 500;
@@ -54,78 +76,88 @@ header p {
     background-color: #5c7758;
 }
 
-.products {
-    padding: 60px 0;
+.section {
+    padding: 80px 0;
 }
 
-.products h2 {
+.section h2 {
     text-align: center;
-    margin-bottom: 40px;
-    font-weight: 500;
+    font-family: 'Lora', serif;
+    font-size: 32px;
+    margin-bottom: 50px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
 .card {
     background: white;
-    border-radius: 20px;
+    border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 }
 
 .card img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: cover;
 }
 
 .card-content {
-    padding: 20px;
+    padding: 25px;
+}
+
+.badge {
+    font-size: 12px;
+    color: #6F8F6B;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .card-content h3 {
-    margin: 0 0 10px;
+    margin: 5px 0 15px;
     font-weight: 500;
 }
 
 .old-price {
     text-decoration: line-through;
-    color: #999;
+    color: #aaa;
     font-size: 14px;
 }
 
 .price {
-    font-size: 20px;
+    font-size: 22px;
     color: #6F8F6B;
     font-weight: 600;
 }
 
-.section-text {
-    padding: 60px 0;
+.features {
     text-align: center;
+    font-size: 16px;
+    line-height: 2;
 }
 
-.section-text h2 {
-    margin-bottom: 20px;
+.cta-final {
+    text-align: center;
 }
 
 footer {
     text-align: center;
     padding: 40px 20px;
+    font-size: 14px;
 }
 
 @media(max-width:768px){
-    header h1 {
-        font-size: 30px;
+    .hero h1 {
+        font-size: 28px;
     }
 }
 
@@ -134,68 +166,65 @@ footer {
 
 <body>
 
-<header class="container">
-    <h1>Sua casa bonita sem pagar caro.</h1>
-    <p>Descubra utensílios, organização e decoração com preços surpreendentes.</p>
-    <a href="https://t.me/achadinhoshomebr" class="btn" target="_blank">
-        Quero entrar no grupo
-    </a>
-</header>
+<section class="hero">
+    <div class="hero-content container">
+        <img src="logo.png" class="logo">
+        <h1>Transforme sua casa sem pagar caro.</h1>
+        <p>Curadoria diária de utensílios, organização e decoração com preços que surpreendem.</p>
+        <a href="https://t.me/achadinhoshomebr" target="_blank" class="btn">
+            Entrar no grupo gratuito
+        </a>
+    </div>
+</section>
 
-<section class="products container">
-    <h2>Alguns achadinhos que já apareceram por lá</h2>
+<section class="section container">
+    <h2>Alguns achadinhos recentes</h2>
 
     <div class="grid">
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c" alt="">
+            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf">
             <div class="card-content">
-                <h3>Organizador de Mantimentos</h3>
-                <div class="old-price">De R$ 79,90</div>
+                <div class="badge">Achadinho do dia</div>
+                <h3>Organizadores de Cozinha Premium</h3>
+                <div class="old-price">De R$ 89,90</div>
                 <div class="price">Por R$ 39,90</div>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1616627561835-074385245ff8" alt="">
+            <img src="https://images.unsplash.com/photo-1582582494700-8b9e1b2f6f8e">
             <div class="card-content">
-                <h3>Luminária Aconchegante</h3>
-                <div class="old-price">De R$ 129,90</div>
+                <div class="badge">Oferta limitada</div>
+                <h3>Luminária Aconchegante Minimalista</h3>
+                <div class="old-price">De R$ 149,90</div>
                 <div class="price">Por R$ 59,90</div>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace" alt="">
+            <img src="https://images.unsplash.com/photo-1600607687644-c7f34b5063c0">
             <div class="card-content">
-                <h3>Kit Potes Herméticos</h3>
-                <div class="old-price">De R$ 99,90</div>
+                <div class="badge">Mais procurado</div>
+                <h3>Kit Potes Herméticos Elegantes</h3>
+                <div class="old-price">De R$ 119,90</div>
                 <div class="price">Por R$ 49,90</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="">
-            <div class="card-content">
-                <h3>Prateleira Decorativa</h3>
-                <div class="old-price">De R$ 149,90</div>
-                <div class="price">Por R$ 79,90</div>
             </div>
         </div>
 
     </div>
 </section>
 
-<section class="section-text container">
-    <h2>Já comprou algo e depois encontrou pela metade do preço?</h2>
-    <p>É frustrante. Por isso criei um grupo onde compartilho apenas achadinhos reais para deixar sua casa mais bonita e organizada sem gastar demais.</p>
+<section class="section container features">
+    ✔ Curadoria diária<br>
+    ✔ Ofertas reais<br>
+    ✔ Comunidade crescendo todos os dias
 </section>
 
-<section class="section-text container">
-    <a href="https://t.me/achadinhoshomebr" class="btn" target="_blank">
-        Entrar agora no Achadinhos Home Brasil
+<section class="section cta-final">
+    <a href="https://t.me/achadinhoshomebr" target="_blank" class="btn">
+        Quero fazer parte agora
     </a>
-    <p style="margin-top:10px; font-size:14px;">Acesso gratuito</p>
 </section>
 
 <footer>
